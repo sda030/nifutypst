@@ -5,8 +5,9 @@
   authors: (
     $for(by-author)$
     (
-      name: "$it.name.literal$"
-    ) $endfor$
+      "$it.name.literal$"
+    )$sep$,
+    $endfor$
   ),
   report_no: "$report_no$",
   project_no: "$project_no$",
