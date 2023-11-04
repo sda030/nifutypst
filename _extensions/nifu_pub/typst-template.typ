@@ -46,7 +46,7 @@
     }),
     background: locate(loc => {
       if counter(page).at(loc).first() == 1 [
-        #image("nifu_rapp_bg.png")]
+        #image("_images/cover_nedre.png")]
       }
     ))
     
@@ -231,7 +231,7 @@
     [ISBN], [#isbn],
     [ISSN], [#issn])
   
-  image("by.png", width: 8em)
+  image("_images/CC-BY.svg", width: 8em)
   
   text(size: 9pt)[Copyright NIFU: CC-BY-4.0]
   
@@ -306,7 +306,7 @@
     )
     bibliography(
       references,
-      title: [Referanser],
+      title: [~Referanser],
       style: "apa")}
 
   if appendix != none {
@@ -314,14 +314,17 @@
   }
   
   if table_table {
+    heading(numbering: none)[~~~~~~~~Tabelloversikt]
     outline(
-      title: block(inset: (left: 1.5em))[#text()[Tabelloversikt]],
+      title: none,
       target: figure.where(kind: table))
   }
   
   if figure_table {
+    heading(numbering: none,
+            )[~~~~~~~~Figuroversikt]
     outline(
-      title: block(inset: (left: 1.5em))[#text()[Figuroversikt]],
+      title: none,
       target: figure.where(kind: "quarto-float-fig"),
       depth: 1)
   }
