@@ -306,25 +306,28 @@
     )
     bibliography(
       references,
-      title: [Referanser],
+      title: [~Referanser],
       style: "apa")}
 
   if appendix != none {
     [hargle bargle]
   }
   
-  if table_table {
-    outline(
-      title: block(inset: (left: 1.5em))[#text()[Tabelloversikt]],
-      target: figure.where(kind: table))
-  }
-  
-  if figure_table {
-    outline(
-      title: block(inset: (left: 1.5em))[#text()[Figuroversikt]],
-      target: figure.where(kind: "quarto-float-fig"),
-      depth: 1)
-  }
+if table_table {
+  heading(numbering: none)[~~~~~~~~Tabelloversikt]
+  outline(
+    title: none,
+    target: figure.where(kind: table))
+}
+
+if figure_table {
+  heading(numbering: none,
+  )[~~~~~~~~Figuroversikt]
+  outline(
+    title: none,
+    target: figure.where(kind: "quarto-float-fig"),
+    depth: 1)
+}
 
   pagebreak()
   
