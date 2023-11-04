@@ -299,7 +299,7 @@
   
   doc
 
-  if references != none {
+  if references != "" {
     set par(first-line-indent: 0pt)
     set block(
       inset: (left: 1.5em)
