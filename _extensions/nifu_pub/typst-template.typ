@@ -50,9 +50,6 @@
       }
     ))
     
-  let concatenatedAuthors = if type(authors) != "string" [
-     #authors.join(", ", last: " og ")
-     ] else [#authors]
 
   set heading(numbering: "1.1.1    ")
 
@@ -159,7 +156,7 @@
         #text(
           size: 12.5pt,
           font: "Calibri"  
-        )[#concatenatedAuthors]]]
+        )[#authors.name]]]
   }
 
   pagebreak()
@@ -199,7 +196,7 @@
         #text(
           size: 12.5pt,
           font: "Calibri"
-        )[#concatenatedAuthors]]]
+        )[#authors.name]]]
 
     line(
     stroke: 1.5pt + rgb("#C84957"),
