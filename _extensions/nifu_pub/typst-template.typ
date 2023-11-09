@@ -49,6 +49,10 @@
         #image("nifu_rapp_bg.png")]
       }
     ))
+    
+  let concatenatedAuthors = if type(authors) != "string" [
+     #authors.join(", ", last: " og ")
+     ] else [#authors]
 
   set heading(numbering: "1.1.1    ")
 
@@ -155,7 +159,7 @@
         #text(
           size: 12.5pt,
           font: "Calibri"  
-        )[#authors.name]]]
+        )[#concatenatedAuthors]]]
   }
 
   pagebreak()
@@ -195,7 +199,7 @@
         #text(
           size: 12.5pt,
           font: "Calibri"
-        )[#authors.name]]]
+        )[#concatenatedAuthors]]]
 
     line(
     stroke: 1.5pt + rgb("#C84957"),
@@ -295,7 +299,7 @@
   
   doc
 
-  if references != none {
+  if references != "" {
     set par(first-line-indent: 0pt)
     set block(
       inset: (left: 1.5em)
