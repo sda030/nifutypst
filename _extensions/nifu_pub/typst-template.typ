@@ -46,7 +46,7 @@
     }),
     background: locate(loc => {
       if counter(page).at(loc).first() == 1 [
-        #image("nifu_rapp_bg.png")]
+        #image("_images/cover_nedre.png")]
       }
     ))
     
@@ -231,7 +231,7 @@
     [ISBN], [#isbn],
     [ISSN], [#issn])
   
-  image("by.png", width: 8em)
+  image("_images/CC-BY.svg", width: 8em)
   
   text(size: 9pt)[Copyright NIFU: CC-BY-4.0]
   
@@ -299,7 +299,7 @@
   
   doc
 
-  if references != none {
+  if references != "" {
     set par(first-line-indent: 0pt)
     set block(
       inset: (left: 1.5em)

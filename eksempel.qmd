@@ -1,0 +1,31 @@
+---
+title: "Fancy og kort rapporttittel"
+subtitle: "Mer detaljer om hva prosjektet egentlig handler om"
+author: 
+ - Bjørnstjerne Bjørnson
+date: "2023-12-24"
+date-format: "DD.MM.YYYY"
+report_no: "2023:10"
+abstract: ""
+preface: ""
+project_no: "20715"
+funder: "Utdanningsdirektoratet"
+funder_address: "Schweigaards gate 15B, 0191 Oslo"
+isbn: "978-82-327-0607-5"
+issn: "1894-8200 (online)"
+signer_1: "Michael Spjelkavik Mark"
+signer_1_title: "Forskningsleder"
+signer_2: "Vibeke Opheim"
+signer_2_title: "Direktør"
+figure_table: true
+table_table: true
+format: 
+  NIFU_pub-typst: default
+keep-typ: false
+references: refs.bib
+---
+
+# Overskrift
+
+Dette blir bra @hjorland.
+
