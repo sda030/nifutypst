@@ -6,7 +6,7 @@
   subtitle: none,
   authors: (),
   report_no: none,
-  abstract: none,
+  //abstract: none,
   paper: "a4",
   margin: (x: 4.2cm, y: 3.5cm),
   fontsize: 10.5pt,
@@ -59,23 +59,27 @@
   
   set par(
     justify: true, 
-    first-line-indent: 1cm,
-    leading: 0.9em)
+    first-line-indent: 0.6cm,
+    leading: 0.8em)
+  
+  show par: set block(below: 0.8em)
   
   set text(
     font: "Cambria",
     size: fontsize)
   
+  
   show heading.where(level: 1): it => [
-    #pagebreak(weak: true)
+    #colbreak(weak: true)
     #set text(
       size: 23.5pt,
       weight: "semibold",
       font: "Calibri")
     #block(
     width: 100%,
-    below: 4em,
+    below: 3em,
     inset: (left: -1.75em))[#text(it)]]
+  
 
   show heading.where(level: 2): it => [
     #set text(
@@ -102,10 +106,11 @@
   show outline.entry.where(level: 1): it => [
     #set text(
       weight: "semibold",
-      size: 14pt)
+      size: 13pt)
     #block(
     width: 100%,
     below: -0.5em,
+    //inset: (left: 0.75em),
     above: 2em)[#text(it)]]
   
   show outline.entry.where(level: 2): it => [
@@ -116,8 +121,17 @@
       below: -0.8em,
       width: 100%)[#text(it)]]
 
-  show figure.where(kind: "table"): set figure(supplement: "Tabell")
-  show figure.where(kind: "quarto-float-fig"): set figure(supplement: "Figur")
+  show figure.where(kind: "table"): it => [
+    #set figure(
+      supplement: "Tabell",
+      caption: text(
+        text: it,
+        weight: "bold",
+        style: "italic"
+      )
+      )]
+      
+  show figure.where(kind: "figure"): set figure.caption(position: top)
       
   if title != none {
     set par(leading: 0.55em)
@@ -281,19 +295,7 @@
     )[Innhold]],
   depth: 2,
   indent: none)
-
-  pagebreak()
-
-  if abstract != none {
-    block(
-      width: 100%,
-      below: 7em)[
-        #text(
-          font: "Calibri",
-          size: 23.5pt,
-          weight: "semibold")[Sammendrag]]
-    text()[#abstract]
-  }
+  outline(target: table_table)
   
   pagebreak()
   

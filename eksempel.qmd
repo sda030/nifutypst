@@ -3,11 +3,15 @@ title: "Fancy og kort rapporttittel"
 subtitle: "Mer detaljer om hva prosjektet egentlig handler om"
 author: 
  - Bjørnstjerne Bjørnson
+ - Henrik Karlstrøm
+ - Marie Curie
 date: "2023-12-24"
 date-format: "DD.MM.YYYY"
 report_no: "2023:10"
-abstract: ""
-preface: ""
+preface: |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies at purus vel lacinia. Nunc eu lectus eu dui mattis posuere sed vel tellus. Sed cursus lacinia sem gravida cursus. Proin orci justo, sodales sed elit at, efficitur viverra diam. Proin efficitur scelerisque justo eget fermentum. Mauris sed eros eget nisi pharetra venenatis molestie ut mauris. Nullam cursus, lorem sit amet posuere varius, eros libero tincidunt dui, in facilisis mi diam consectetur neque. Morbi sit amet massa viverra, fringilla quam vitae, eleifend massa. Maecenas gravida tempus lectus sed vulputate. Donec malesuada sapien libero, eget posuere mi laoreet non. Vestibulum venenatis augue et augue interdum, et maximus ligula cursus. In dapibus quam ac sagittis suscipit. Ut a semper mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+  Mauris vitae fermentum quam, id egestas ex. Aenean tempor ornare feugiat. Nulla suscipit elementum neque, in hendrerit tortor blandit at. Ut quis magna vel eros iaculis rutrum. Aliquam varius, tortor sit amet mollis blandit, odio nibh sagittis odio, a commodo nulla arcu vitae nisi. Nunc placerat pulvinar odio eu facilisis. Vivamus nec tempus lorem, bibendum ultricies tortor. Nam vitae laoreet turpis. Donec bibendum arcu sapien, vitae iaculis ligula aliquam ac. Quisque luctus consequat eros in feugiat. Aenean ultricies quam sit amet velit malesuada, sed aliquet velit tempus. Nulla non justo ipsum. Phasellus vel volutpat nisi. Integer sollicitudin cursus enim at maximus. Morbi non convallis erat, eget porta justo.
 project_no: "20715"
 funder: "Utdanningsdirektoratet"
 funder_address: "Schweigaards gate 15B, 0191 Oslo"
@@ -21,11 +25,63 @@ figure_table: true
 table_table: true
 format: 
   NIFU_pub-typst: default
-keep-typ: false
+keep-typ: true
 references: refs.bib
+execute: 
+  echo: false
+language: language.yaml
 ---
+
+# Sammendrag {.unnumbered}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies at purus vel lacinia. Nunc eu lectus eudui mattis posuere sed vel tellus. Sed cursus lacinia sem gravida cursus. Proin orci justo, sodales sed elit at, efficitur viverra diam. Proin efficitur scelerisque justo eget fermentum. Mauris sed eros eget nisi pharetra venenatis molestie ut mauris. Nullam cursus, lorem sit amet posuere varius, eros libero tincidunt dui, in facilisis mi diam consectetur neque. Morbi sit amet massa viverra, fringilla quam vitae, eleifend massa. Maecenas gravida tempus lectus sed vulputate. Donec malesuada sapien libero, eget posuere mi laoreet non. Vestibulum venenatis augue et augue interdum, et maximus ligula cursus. In dapibus quam ac sagittis suscipit. Ut a semper mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+  Mauris vitae fermentum quam, id egestas ex. Aenean tempor ornare feugiat. Nulla suscipit elementum neque, in hendrerit tortor blandit at. Ut quis magna vel eros iaculis rutrum. Aliquam varius, tortor sit amet mollis blandit, odio nibh sagittis odio, a commodo nulla arcu vitae nisi. Nunc placerat pulvinar odio eu facilisis. Vivamus nec tempus lorem, bibendum ultricies tortor. Nam vitae laoreet turpis. Donec bibendum arcu sapien, vitae iaculis ligula aliquam ac. Quisque luctus consequat eros in feugiat. Aenean ultricies quam sit amet velit malesuada, sed aliquet velit tempus. Nulla non justo ipsum. Phasellus vel volutpat nisi. Integer sollicitudin cursus enim at maximus. Morbi non convallis erat, eget porta justo.
 
 # Overskrift
 
 Dette blir bra @hjorland.
+
+## Underoverskrift
+
+For å sjekke innholdsfortegnelsen.
+
+### Underunderoverskrift
+
+Dette blir ikke med i innholdsfortegnelsen.
+
+# Et par avsnitt for å vise tekst
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies at purus vel lacinia. Nunc eu lectus eu dui mattis posuere sed vel tellus. Sed cursus lacinia sem gravida cursus. Proin orci justo, sodales sed elit at, efficitur viverra diam. Proin efficitur scelerisque justo eget fermentum. Mauris sed eros eget nisi pharetra venenatis molestie ut mauris. Nullam cursus, lorem sit amet posuere varius, eros libero tincidunt dui, in facilisis mi diam consectetur neque. Morbi sit amet massa viverra, fringilla quam vitae, eleifend massa. Maecenas gravida tempus lectus sed vulputate. Donec malesuada sapien libero, eget posuere mi laoreet non. Vestibulum venenatis augue et augue interdum, et maximus ligula cursus. In dapibus quam ac sagittis suscipit. Ut a semper mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Mauris vitae fermentum quam, id egestas ex. Aenean tempor ornare feugiat. Nulla suscipit elementum neque, in hendrerit tortor blandit at. Ut quis magna vel eros iaculis rutrum. Aliquam varius, tortor sit amet mollis blandit, odio nibh sagittis odio, a commodo nulla arcu vitae nisi. Nunc placerat pulvinar odio eu facilisis. Vivamus nec tempus lorem, bibendum ultricies tortor. Nam vitae laoreet turpis. Donec bibendum arcu sapien, vitae iaculis ligula aliquam ac. Quisque luctus consequat eros in feugiat. Aenean ultricies quam sit amet velit malesuada, sed aliquet velit tempus. Nulla non justo ipsum. Phasellus vel volutpat nisi. Integer sollicitudin cursus enim at maximus. Morbi non convallis erat, eget porta justo.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor eleifend justo, vitae pharetra arcu sodales vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vitae augue hendrerit, imperdiet ligula id, scelerisque magna. Phasellus erat enim, vestibulum vitae facilisis et, rhoncus nec odio. Ut sodales ante vitae erat cursus porttitor. Sed feugiat dui velit, non hendrerit leo feugiat non. Vivamus a consectetur velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur tincidunt massa in mi accumsan tempus. Duis sapien metus, tincidunt consequat consectetur eget, porttitor eget dui. Aliquam convallis consectetur facilisis. Morbi augue eros, tincidunt non lectus in, pharetra porttitor magna. Donec congue nisi in tristique maximus. Pellentesque quam augue, sagittis id pretium non, tristique vel arcu.
+
+Pellentesque sit amet placerat ante. Phasellus ac pellentesque eros. Integer consectetur accumsan tortor, eu ornare mauris bibendum quis. Mauris scelerisque ipsum eget nisl interdum lacinia. Donec dapibus est turpis, finibus eleifend nisl blandit non. Ut consectetur, lacus ut feugiat cursus, sem tortor laoreet felis, at tristique velit dolor ac metus. Ut sed fermentum mi. In facilisis ultrices nulla, quis facilisis lorem viverra hendrerit. Integer ac vestibulum ligula. Vivamus pharetra turpis tellus, at aliquam mi ultrices commodo. Proin a posuere augue. Nam commodo id ex at iaculis. Ut ex nibh, condimentum non fringilla non, blandit sit amet ante. Pellentesque id sagittis leo. Vestibulum sem justo, consectetur nec mauris quis, interdum consectetur mi. Sed fermentum pharetra convallis.
+
+Phasellus in enim tempor, pretium dui vel, fringilla augue. Curabitur vestibulum et justo sed congue. Integer ac neque eu lectus viverra facilisis. Quisque finibus ligula augue. Aenean sit amet egestas nunc, nec mollis tortor. Ut ut lacinia ante. In id purus vel diam iaculis ultricies eget at dolor. Pellentesque venenatis pretium viverra. Donec accumsan at odio non auctor. Donec libero neque, tincidunt ut finibus ut, porta vitae lacus. Maecenas nec interdum justo, condimentum posuere justo. Praesent a auctor risus, quis placerat mauris. Integer non dui risus. Etiam lectus libero, posuere vitae interdum at, vulputate a mi. 
+
+
+# En tabell som viser noe
+
+```{r}
+#| tbl-cap: Moro med biler
+
+mtcars |> 
+  head(10) |> 
+  knitr::kable()
+```
+
+
+# En graf som viser noe annet
+
+```{r}
+#| fig-cap: Sjekk de bladene
+
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     xlab = "Sepal length",
+     ylab = "Sepal width")
+```
 
