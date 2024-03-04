@@ -1,6 +1,7 @@
 
 #import "@preview/tablex:0.0.5": tablex, cellx, hlinex
 
+
 #let NIFU_report(
   title: none,
   subtitle: none,
@@ -55,7 +56,6 @@
      ] else [#authors]
 
   set heading(numbering: "1.1.1    ")
-
   
   set par(
     justify: true, 
@@ -69,27 +69,30 @@
     size: fontsize)
   
   
-  show heading.where(level: 1): it => [
-    #colbreak(weak: true)
-    #set text(
-      size: 23.5pt,
-      weight: "semibold",
-      font: "Calibri")
-    #block(
-    width: 100%,
-    below: 3em,
-    inset: (left: -1.75em))[#text(it)]]
-    
-    //show heading.where(level: 1, numbering: none): it => [
-    //#colbreak(weak: true)
-    //#set text(
-    //  size: 23.5pt,
-    //  weight: "semibold",
-    //  font: "Calibri")
-    //#block(
-    //width: 100%,
-    //below: 3em)[#text(it)]]
-  
+  show heading.where(level: 1): it => {
+    if it.numbering != none {
+      colbreak(weak: true)
+      set text(
+        size: 23.5pt,
+        weight: "semibold",
+        font: "Calibri")
+      block(
+      width: 100%,
+      below: 3em,
+      inset: (left: -1.75em))[#text(it)]
+    } else {
+      colbreak(weak: true)
+      set text(
+        size: 23.5pt,
+        weight: "semibold",
+        font: "Calibri")
+      block(
+      width: 100%,
+      below: 3em
+      )[#text(it)]
+      parbreak()
+    }
+    }
 
   show heading.where(level: 2): it => [
     #set text(
@@ -113,36 +116,46 @@
     below: 1em,
     inset: (left: -3.1em))[#text(it)]]
     
-  show outline.entry.where(level: 1): it => [
-    #set text(
+  show outline.entry.where(level: 1): it => {
+    set text(
       weight: "semibold",
       size: 13pt)
-    #block(
+    block(
     width: 100%,
     below: -0.5em,
     //inset: (left: 0.75em),
-    above: 2em)[#text(it)]]
+    above: 2em)[#text(it)]
+    }
   
-  show outline.entry.where(level: 2): it => [
-    #set text(
+  show outline.entry.where(level: 2): it => {
+    set text(
       weight: "regular",
       size: 12pt)
-    #block(
+    block(
       below: -0.8em,
-      width: 100%)[#text(it)]]
+      width: 100%)[#text(it)]
+  }
 
-  show figure.where(kind: "table"): it => [
-    #set figure(
-      supplement: "Tabell",
-      caption: text(
-        text: it,
-        weight: "bold",
-        style: "italic"
-      )
-      )]
-      
-  show figure.where(kind: "figure"): set figure.caption(position: top)
-      
+  //show bibliography: it => {
+  //  colbreak(weak: true)
+  //  it.title
+  //  it
+  //}
+  
+    
+  show figure.where(kind: "quarto-float-fig"): it => block(width: 100%)[
+    #set figure(it.supplement: "Figur")
+    #it.body
+    #set align(left)
+    #text(weight: "bold")[#it.caption]
+  ]
+  
+  show figure.where(kind: "table"): it => block(width: 100%)[
+    #set align(left)
+    #text(weight: "bold")[#it.caption]
+    #it.body
+  ]
+  
   if title != none {
     set par(leading: 0.55em)
     place(dx: -6em, dy: 38em)[
@@ -296,16 +309,13 @@
   linebreak()
 
   outline(
-    title: block(
-      inset: (left: 1.75em)
-    )[#text(
+    title: block()[#text(
       font: "Calibri",
       weight: "semibold",
       size: 23.5pt
     )[Innhold]],
   depth: 2,
   indent: none)
-  //outline(target: figure.where(kind: "table_table"))
   
   pagebreak()
   
@@ -327,14 +337,14 @@
   
   if table_table {
     outline(
-        title: block(inset: (left: 1.5em))[#heading(text()[Tabelloversikt], outlined: true)],
+        title: block()[#heading(text()[Tabelloversikt], outlined: true)],
         target: figure.where(kind: "table"),
         depth: 1)
   }
   
   if figure_table {
     outline(
-      title: block(inset: (left: 1.5em))[#heading(text()[Figuroversikt], outlined: true)],
+      title: block()[#heading(text()[Figuroversikt], outlined: true)],
       target: figure.where(kind: "quarto-float-fig"),
       depth: 1)
   }
