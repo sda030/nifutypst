@@ -9,6 +9,7 @@
     )$sep$,
     $endfor$
   ),
+  report_type: "$report_type$",
   report_no: "$report_no$",
   project_no: "$project_no$",
   isbn: "$isbn$",

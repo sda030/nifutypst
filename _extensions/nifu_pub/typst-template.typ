@@ -6,6 +6,7 @@
   title: none,
   subtitle: none,
   authors: (),
+  report_type: none,
   report_no: none,
   abstract: none,
   paper: "a4",
@@ -67,7 +68,6 @@
   set text(
     font: "Cambria",
     size: fontsize)
-  
   
   show heading.where(level: 1): it => {
     if it.numbering != none {
@@ -136,20 +136,12 @@
       width: 100%)[#text(it)]
   }
 
-  //show bibliography: it => {
-  //  colbreak(weak: true)
-  //  it.title
-  //  it
-  //}
-  
-    
   show figure.where(kind: "quarto-float-fig"): it => {
   block(width: 100%)[
     #it.body
     #set align(left)
     #text(weight: "bold",
-    font: "Calibri")[#it.caption]
-  ]
+    font: "Calibri")[#it.caption]]
   }
   
   show figure.where(kind: "quarto-float-tbl"): it => {
@@ -162,7 +154,7 @@
   
   if title != none {
     set par(leading: 0.55em)
-    place(dx: -6em, dy: 38em)[
+    place(dx: -6.4em, dy: 32em)[
       #align(left)[
         #block(inset: 2em)[
           #text(
@@ -171,10 +163,26 @@
             font: "Calibri"
           )[#title]]]]
   }
-
+  
+  if report_type == "rapport" {
+    place(dx: 36.2em, dy: 25em)[
+    #circle(
+      radius: 11pt,
+      fill: rgb("#C84957"),
+      stroke: white)
+    ]
+  } else if report_type == "notat" {
+    place(dx: 36.2em, dy: 25em)[
+    #circle(
+      radius: 11pt,
+      fill: rgb("#2D8E9F"),
+      stroke: white)
+    ]
+  }
+  
   if subtitle != none {
     set par(leading: 0.55em)
-    place(dx: -6em, dy: 46em)[
+    place(dx: -6.4em, dy: 36em)[
       #align(left)[
         #block(inset: 2em)[
           #text(
@@ -185,7 +193,7 @@
   }
 
   if report_no != none {
-    set par(leading: 0.55em)
+    set par(leading: 0.65em)
     place(dx: 34em, dy: 29em)[
       #align(right)[
         #text(
@@ -291,7 +299,7 @@
   )[Forord]]
 
   if preface != none {
-   text()[#preface] 
+    preface
   }
 
   block(

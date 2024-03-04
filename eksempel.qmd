@@ -7,6 +7,7 @@ author:
  - Marie Curie
 date: "2023-12-24"
 date-format: "DD.MM.YYYY"
+report_type: rapport
 report_no: "2023:10"
 preface: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies at purus vel lacinia. Nunc eu lectus eu dui mattis posuere sed vel tellus. Sed cursus lacinia sem gravida cursus. Proin orci justo, sodales sed elit at, efficitur viverra diam. Proin efficitur scelerisque justo eget fermentum. Mauris sed eros eget nisi pharetra venenatis molestie ut mauris. Nullam cursus, lorem sit amet posuere varius, eros libero tincidunt dui, in facilisis mi diam consectetur neque. Morbi sit amet massa viverra, fringilla quam vitae, eleifend massa. Maecenas gravida tempus lectus sed vulputate. Donec malesuada sapien libero, eget posuere mi laoreet non. Vestibulum venenatis augue et augue interdum, et maximus ligula cursus. In dapibus quam ac sagittis suscipit. Ut a semper mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
