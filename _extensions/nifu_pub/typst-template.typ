@@ -6,7 +6,7 @@
   subtitle: none,
   authors: (),
   report_no: none,
-  //abstract: none,
+  abstract: none,
   paper: "a4",
   margin: (x: 4.2cm, y: 3.5cm),
   fontsize: 10.5pt,
@@ -79,6 +79,16 @@
     width: 100%,
     below: 3em,
     inset: (left: -1.75em))[#text(it)]]
+    
+    //show heading.where(level: 1, numbering: none): it => [
+    //#colbreak(weak: true)
+    //#set text(
+    //  size: 23.5pt,
+    //  weight: "semibold",
+    //  font: "Calibri")
+    //#block(
+    //width: 100%,
+    //below: 3em)[#text(it)]]
   
 
   show heading.where(level: 2): it => [
@@ -295,7 +305,7 @@
     )[Innhold]],
   depth: 2,
   indent: none)
-  outline(target: table_table)
+  //outline(target: figure.where(kind: "table_table"))
   
   pagebreak()
   
@@ -317,13 +327,14 @@
   
   if table_table {
     outline(
-      title: block(inset: (left: 1.5em))[#text()[Tabelloversikt]],
-      target: figure.where(kind: table))
+        title: block(inset: (left: 1.5em))[#heading(text()[Tabelloversikt], outlined: true)],
+        target: figure.where(kind: "table"),
+        depth: 1)
   }
   
   if figure_table {
     outline(
-      title: block(inset: (left: 1.5em))[#text()[Figuroversikt]],
+      title: block(inset: (left: 1.5em))[#heading(text()[Figuroversikt], outlined: true)],
       target: figure.where(kind: "quarto-float-fig"),
       depth: 1)
   }

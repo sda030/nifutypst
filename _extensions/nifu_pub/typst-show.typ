@@ -1,7 +1,7 @@
 #show: doc => NIFU_report(
   title: "$title$",
   subtitle: "$subtitle$",
-  //abstract: "$abstract$",
+  abstract: "$abstract$",
   authors: (
     $for(by-author)$
     (
