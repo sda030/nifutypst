@@ -143,18 +143,22 @@
   //}
   
     
-  show figure.where(kind: "quarto-float-fig"): it => block(width: 100%)[
-    #set figure(it.supplement: "Figur")
+  show figure.where(kind: "quarto-float-fig"): it => {
+  block(width: 100%)[
     #it.body
     #set align(left)
-    #text(weight: "bold")[#it.caption]
+    #text(weight: "bold",
+    font: "Calibri")[#it.caption]
   ]
+  }
   
-  show figure.where(kind: "table"): it => block(width: 100%)[
-    #set align(left)
-    #text(weight: "bold")[#it.caption]
-    #it.body
-  ]
+  show figure.where(kind: "quarto-float-tbl"): it => {
+  block(below: 3em)
+  block(width: 100%)[
+          #set align(left)
+          #text(weight: "bold", font: "Calibri")[#it.caption]
+          #it.body]
+  }
   
   if title != none {
     set par(leading: 0.55em)
@@ -338,7 +342,7 @@
   if table_table {
     outline(
         title: block()[#heading(text()[Tabelloversikt], outlined: true)],
-        target: figure.where(kind: "table"),
+        target: figure.where(kind: "quarto-float-tbl"),
         depth: 1)
   }
   

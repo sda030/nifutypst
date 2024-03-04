@@ -29,10 +29,18 @@ keep-typ: true
 references: refs.bib
 execute: 
   echo: false
-lang: no
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Figur
+      key: fig
+    - kind: float
+      reference-prefix: Tabell
+      key: tbl
 ---
 ```{r}
 library(gt)
+library(tinytable)
 ```
 
 
@@ -71,23 +79,48 @@ Phasellus in enim tempor, pretium dui vel, fringilla augue. Curabitur vestibulum
 
 # En tabell som viser noe
 
+Kanskje vi skal sjekke kryssreferanser til objekter også, se @tbl-bil.
+
+Phasellus in enim tempor, pretium dui vel, fringilla augue. Curabitur vestibulum et justo sed congue. Integer ac neque eu lectus viverra facilisis. Quisque finibus ligula augue. Aenean sit amet egestas nunc, nec mollis tortor. Ut ut lacinia ante. In id purus vel diam iaculis ultricies eget at dolor. Pellentesque venenatis pretium viverra. Donec accumsan at odio non auctor. Donec libero neque, tincidunt ut finibus ut, porta vitae lacus. Maecenas nec interdum justo, condimentum posuere justo. Praesent a auctor risus, quis placerat mauris. Integer non dui risus. Etiam lectus libero, posuere vitae interdum at, vulputate a mi.
+
+
 ```{r}
+#| label: tbl-bil
 #| tbl-cap: Moro med biler
 
 mtcars |> 
-  head(10) |> 
+  head(10) |>
+  tt()
   #gt()
-  knitr::kable()
+  #knitr::kable()
 ```
 
 
 # En graf som viser noe annet
 
+Vi tester kryssreffing her også, bare se hvordan det funker med @fig-iris.
+
+Phasellus in enim tempor, pretium dui vel, fringilla augue. Curabitur vestibulum et justo sed congue. Integer ac neque eu lectus viverra facilisis. Quisque finibus ligula augue. Aenean sit amet egestas nunc, nec mollis tortor. Ut ut lacinia ante. In id purus vel diam iaculis ultricies eget at dolor. Pellentesque venenatis pretium viverra. Donec accumsan at odio non auctor. Donec libero neque, tincidunt ut finibus ut, porta vitae lacus. Maecenas nec interdum justo, condimentum posuere justo. Praesent a auctor risus, quis placerat mauris. Integer non dui risus. Etiam lectus libero, posuere vitae interdum at, vulputate a mi.
+
 ```{r}
 #| fig-cap: Sjekk de bladene
+#| label: fig-iris
 
 plot(iris$Sepal.Length, iris$Sepal.Width,
      xlab = "Sepal length",
      ylab = "Sepal width")
+```
+
+# En siste graf
+
+For å se om nummereringen oppfører seg pent.
+
+```{r}
+#| tbl-cap: Bla bla bla
+#| label: tbl-iris
+
+iris |> 
+  head() |> 
+  tt()
 ```
 
