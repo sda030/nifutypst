@@ -39,7 +39,7 @@
           #text(spacing: 0.2cm)[
             #text(size: 11pt)[#counter(page).display()]
             #text(
-              fill: rgb("#C84957"),
+              fill: if report_type == "rapport" {rgb("#C84957")} else {rgb("#2D8E9F")},
               size: 12pt)[#symbol("•")] 
             #text(
               size: 8pt, 
@@ -164,21 +164,12 @@
           )[#title]]]]
   }
   
-  if report_type == "rapport" {
-    place(dx: 36.2em, dy: 25em)[
+  place(dx: 36.2em, dy: 25em)[
     #circle(
       radius: 11pt,
-      fill: rgb("#C84957"),
+      fill: if report_type == "rapport" {rgb("#C84957")} else {rgb("#2D8E9F")},
       stroke: white)
     ]
-  } else if report_type == "notat" {
-    place(dx: 36.2em, dy: 25em)[
-    #circle(
-      radius: 11pt,
-      fill: rgb("#2D8E9F"),
-      stroke: white)
-    ]
-  }
   
   if subtitle != none {
     set par(leading: 0.55em)
