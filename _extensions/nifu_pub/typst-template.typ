@@ -20,6 +20,7 @@
   references: none,
   appendix: none,
   isbn: none,
+  isbn_online: none,
   issn: none,
   date: none,
   signer_1: none,
@@ -269,7 +270,10 @@
     [Fotomontasje], [NIFU],
     [], [],
     [ISBN], [#isbn],
-    [ISSN], [#issn])
+    [ISBN], [#isbn_online],
+    [ISSN], [#issn]
+    )
+  }
   
   image("_images/CC-BY.svg", width: 8em)
   
