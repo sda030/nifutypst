@@ -325,10 +325,10 @@
   doc
 
   if references != "" {
-    set par(first-line-indent: 0pt)
-    set block(
-      inset: (left: 1.5em)
-    )
+    set par(first-line-indent: 0pt, 
+            hanging-indent: 1.27cm)
+    set text(hyphenate: false)
+
     bibliography(
       references,
       title: [Referanser],
