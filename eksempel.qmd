@@ -18,6 +18,7 @@ project_no: "20715"
 funder: "Utdanningsdirektoratet"
 funder_address: "Schweigaards gate 15B, 0191 Oslo"
 isbn: "978-82-327-0607-5"
+isbn_online: "978-82-327-0607-1 (online)"
 issn: "1894-8200 (online)"
 signer_1: "Michael Spjelkavik Mark"
 signer_1_title: "Forskningsleder"
@@ -29,6 +30,7 @@ format:
   NIFU_pub-typst: default
 keep-typ: true
 references: refs.bib
+lang: nb
 execute: 
   echo: false
 crossref:
