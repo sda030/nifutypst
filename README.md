@@ -11,3 +11,14 @@ This will install the extension and create an example qmd file that you can use 
 
 ## Using
 
+
+```qmd
+---
+title: "My NIFU Document"
+format:
+  NIFU_pub-typst: default
+---
+
+# Overskrift
+
+```qmd
