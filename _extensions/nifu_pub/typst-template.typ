@@ -61,9 +61,8 @@
   set par(
     justify: true, 
     first-line-indent: 0.6cm,
-    leading: 0.8em)
-  
-  show par: set block(below: 0.8em)
+    leading: 0.8em,
+    spacing: 0.8em)
   
   set text(
     font: "Cambria",
