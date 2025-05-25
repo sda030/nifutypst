@@ -32,8 +32,7 @@
   set page(
     paper: paper,
     margin: margin,
-    footer: locate(loc => {
-      if counter(page).at(loc).first() > 2  [
+    footer: context if counter(page).get().at(0) > 2  [
         #align(center)[
           #text(spacing: 0.2cm)[
             #text(size: 11pt)[#counter(page).display()]
@@ -43,13 +42,10 @@
             #text(
               size: 8pt, 
               spacing: 0.1cm,
-              font: "Calibri")[Rapport #report_no]]]]
-    }),
-    background: locate(loc => {
-      if counter(page).at(loc).first() == 1 [
+              font: "Calibri")[Rapport #report_no]]]],
+    background: context if counter(page).get().at(0) == 1 [
         #image("_images/cover_nedre.png")]
-      }
-    ))
+    )
     
   let concatenatedAuthors = if type(authors) != "string" [
      #authors.join(", ", last: " og ")
