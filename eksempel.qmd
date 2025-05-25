@@ -71,6 +71,7 @@ Dette blir ikke med i innholdsfortegnelsen.
 
 {{< lipsum 5 >}}
 
+# Tabeller som viser biler
 
 Kanskje vi skal sjekke kryssreferanser til objekter også, se @tbl-bil.
 
@@ -88,6 +89,20 @@ mtcars |>
   #gt()
   #knitr::kable()
 ```
+
+
+
+```{r}
+#| label: tbl-bil2
+#| tbl-cap: Moro med biler
+
+mtcars |> 
+  tail(10) |>
+  tt()
+  #gt()
+  #knitr::kable()
+```
+
 
 
 # En graf som viser noe annet
@@ -114,7 +129,23 @@ plot(iris$Sepal.Length, iris$Sepal.Width,
      ylab = "Sepal width")
 ```
 
-# En siste graf
+
+## Undertittel for å sjekke figurnummerering
+
+@Fig-iris viser akkurat det samme, bare motsatt.
+
+
+```{r}
+#| fig-cap: Sjekk de bladene
+#| label: fig-iris2
+
+plot(iris$Sepal.Width, iris$Sepal.Length,
+     xlab = "Sepal width",
+     ylab = "Sepal length")
+```
+
+
+# En tabell
 
 For å se om nummereringen oppfører seg pent.
 
@@ -125,5 +156,26 @@ For å se om nummereringen oppfører seg pent.
 iris |> 
   head() |> 
   tt()
+```
+
+
+## Noe på nivå 2
+
+### Noe på nivå 3
+
+#### Med en liten underinndeling på nivå 4
+
+
+# En siste tabell
+
+For å se om nummereringen oppfører seg pent.
+
+```{r}
+#| tbl-cap: Bla bla bla 2
+#| label: tbl-iris2
+
+iris |> 
+  head() |> 
+  gt::gt()
 ```
 
