@@ -22,8 +22,9 @@
   signer_2: "$signer_2$",
   signer_1_title: "$signer_1_title$",
   signer_2_title: "$signer_2_title$",
+  references: "$references$",
   figure_table: $figure_table$,
   table_table: $table_table$,
-  references: "$references$",
+  path_cover_upper_image: "$path_cover_upper_image$",
   doc,
 ) 
