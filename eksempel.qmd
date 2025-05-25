@@ -4,6 +4,7 @@ subtitle: "Mer detaljer om hva prosjektet egentlig handler om"
 author: 
  - Bjørnstjerne Bjørnson
  - Henrik Karlstrøm
+ - Rhoshandiatellyneshiaunneveshenk Koyaanisquatsiuth
  - Marie Curie
 date: "2023-12-24"
 date-format: "DD.MM.YYYY"
@@ -103,7 +104,7 @@ Noen ekstra avsnitt.
 
 
 ```{r}
-#| fig-cap: Sjekk de bladene
+#| fig-cap: "Sjekk de bladene! Dette er en ganske så lang figurtittel for å sjekke at den fortsetter på neste linje på en pen måte som helst ikke begynner under Figur X."
 #| label: fig-iris
 
 plot(iris$Sepal.Length, iris$Sepal.Width,
