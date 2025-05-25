@@ -318,7 +318,7 @@
       size: 23.5pt
     )[Innhold]],
   depth: 2,
-  indent: none)
+  indent: 0cm)
   
   pagebreak()
   
