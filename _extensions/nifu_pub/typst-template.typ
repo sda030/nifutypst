@@ -30,6 +30,29 @@
   table_table: false,
   doc
 ) = {
+
+  let report_type = if report_type in ("report", "rapport") {
+    "rapport"
+  } else if report_type in ("workingpaper", "working-paper", "working paper", "working_paper", "arbeidsnotat") {
+    "arbeidsnotat"
+  } else {
+    none
+  }
+  let type_fill = if report_type == "rapport" {
+    rgb("#C84957")
+  } else if report_type == "arbeidsnotat" {
+    rgb("#2D8E9F")
+  } else if report_type == none {
+    rgb("#ffffff")
+  }
+  let type_pretty = if report_type == "rapport" {
+    "Rapport "
+  } else if report_type == "arbeidsnotat" {
+    "Arbeidsnotat "
+  } else if report_type == none {
+    ""
+  }
+
   set page(
     paper: paper,
     margin: margin,
@@ -39,12 +62,12 @@
           #text(spacing: 0.2cm)[
             #text(size: 11pt)[#counter(page).display()]
             #text(
-              fill: if report_type == "rapport" {rgb("#C84957")} else {rgb("#2D8E9F")},
+              fill: #type_fill,
               size: 12pt)[#symbol("•")] 
             #text(
               size: 8pt, 
               spacing: 0.1cm,
-              font: "Calibri")[Rapport #report_no]]]]
+              font: "Calibri")[#type_pretty #report_no]]]]
     }),
     background: locate(loc => {
       if counter(page).at(loc).first() == 1 [
@@ -152,6 +175,8 @@
           #it.body]
   }
   
+  if report_type != none {
+
   if title != none {
     set par(leading: 0.55em)
     place(dx: -6.4em, dy: 32em)[
@@ -167,7 +192,7 @@
   place(dx: 36.2em, dy: 25em)[
     #circle(
       radius: 11pt,
-      fill: if report_type == "rapport" {rgb("#C84957")} else {rgb("#2D8E9F")},
+      fill: #type_fill,
       stroke: white)
     ]
   
@@ -183,15 +208,13 @@
           )[#subtitle]]]]
   }
 
-  if report_no != none {
     set par(leading: 0.65em)
     place(dx: 34em, dy: 29em)[
       #align(right)[
         #text(
           size: 12.5pt,
           font: "Calibri"
-        )[Rapport #linebreak()#report_no]]]
-  }
+        )[#type_pretty#linebreak()#report_no]]]
 
   if authors != none {
     place(dx: -4.2em, dy: 56em)[
@@ -204,6 +227,7 @@
 
   pagebreak()
   pagebreak()
+}
 
   place(dx: -6em, dy: 38em)[
     #set par(leading: 0.55em)
@@ -352,14 +376,16 @@
       depth: 1)
   }
 
-  pagebreak()
-  
-  counter(page).update(0)
-  place(dy: 45em)[
-    #text()[
-      Nordisk institutt for studier av #linebreak()
-      innovasjon, forskning og utdanning #linebreak() #linebreak()
-      Nordic institute for Studies in #linebreak()
-      Innovation, Research and Education #linebreak() #linebreak()
-      www.nifu.no]]
+  if report_type != none {
+    pagebreak()
+    
+    counter(page).update(0)
+    place(dy: 45em)[
+      #text()[
+        Nordisk institutt for studier av #linebreak()
+        innovasjon, forskning og utdanning #linebreak() #linebreak()
+        Nordic institute for Studies in #linebreak()
+        Innovation, Research and Education #linebreak() #linebreak()
+        www.nifu.no]]
+  }
 }
