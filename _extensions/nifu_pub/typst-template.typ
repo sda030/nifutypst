@@ -216,8 +216,11 @@
       #align(left)[
         #text(
           size: 12.5pt,
-          font: "Calibri"  
-        )[#concatenatedAuthors]]]
+          font: "Calibri",
+          costs: (hyphenation: 500%)
+        )[#concatenatedAuthors]
+      ]
+    ]
   }
 
   pagebreak()
