@@ -194,7 +194,6 @@
     #image(path_cover_upper_image,
            width: 210mm)
   ])
-
   }
     
     
@@ -305,24 +304,24 @@
   show table.cell: set text(size: 9pt)
   table(
       columns: (1.1fr, 4.0fr),
-    stroke: none,
-    align: left,
+      stroke: none,
+      align: left,
       inset: (x: 0pt, y: 4pt),
       [#type_pretty], [#report_no],
       [], [],
       [Utgitt av], [Nordisk institutt for studier av innovasjon, forskning og utdanning (NIFU)],
       [Adresse], [Postboks 2815 Tøyen, 0608 Oslo. Besøksadresse: Økernveien 9, 0653 Oslo.],
-    [], [],
-    [Prosjektnr.], [#project_no],
-    [], [],
-    [Oppdragsgiver], [#funder],
-    [Adresse], [#funder_address],
-    [], [],
-    [Fotomontasje], [NIFU],
-    [], [],
-    [ISBN], [#isbn],
-    [ISBN], [#isbn_online],
-    [ISSN], [#issn]
+      [], [],
+      [Prosjektnr.], [#project_no],
+      [], [],
+      [Oppdragsgiver], [#funder],
+      [Adresse], [#funder_address],
+      [], [],
+      [Fotomontasje], [NIFU],
+      [], [],
+      [ISBN], [#isbn],
+      [ISBN], [#isbn_online],
+      [ISSN], [#issn]
     )
   }
   
@@ -355,16 +354,16 @@
   )[#text()[Oslo, #date]]
 
   if signer_1 != "" {
-  grid(
-    columns: 2,
-    column-gutter: 15em,
-    rows: 2,
-    row-gutter: 1em,
-    text()[#signer_1],
-    text()[#signer_2],
-    text()[#signer_1_title],
-    text()[#signer_2_title])
-  }
+    grid(
+      columns: 2,
+      column-gutter: 15em,
+      rows: 2,
+      row-gutter: 1em,
+      text()[#signer_1],
+      text()[#signer_2],
+      text()[#signer_1_title],
+      text()[#signer_2_title])
+    }
   }
 
   
@@ -388,7 +387,9 @@
 	              let num = query(selector(heading).before(here())).last().numbering
 	              numbering("1.1", hdr, n)
     })
+
   doc
+
   }
 
   if references != "" {
@@ -399,7 +400,8 @@
     bibliography(
       references,
       title: [Referanser],
-      style: "apa")}
+      style: "apa")
+  }
 
   if appendix != none {
     [hargle bargle]
