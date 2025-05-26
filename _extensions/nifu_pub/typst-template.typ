@@ -298,6 +298,9 @@
   
   block(above: 3em)[#text(size: 9pt)[www.nifu.no]]
   
+  // Kun om det er et forord
+  if preface != "" {
+  
   pagebreak()
   
   block(
@@ -310,15 +313,14 @@
     font: "Calibri",
   )[Forord]]
 
-  if preface != none {
     preface
-  }
 
   block(
     width: 100%,
     spacing: 4em
   )[#text()[Oslo, #date]]
 
+  if signer_1 != "" {
   grid(
     columns: 2,
     column-gutter: 15em,
@@ -328,6 +330,9 @@
     text()[#signer_2],
     text()[#signer_1_title],
     text()[#signer_2_title])
+  }
+  }
+
   
   pagebreak()
   linebreak()
