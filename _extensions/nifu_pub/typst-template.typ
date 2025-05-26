@@ -48,7 +48,7 @@
         #image("_images/cover_nedre.png")]
     )
     
-  let concatenatedAuthors = if type(authors) != "string" [
+  let concatenatedAuthors = if type(authors) != str [
      #authors.join(", ", last: " og ")
      ] else [#authors]
 
