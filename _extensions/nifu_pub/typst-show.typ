@@ -13,6 +13,7 @@
   report_no: "$report_no$",
   project_no: "$project_no$",
   isbn: "$isbn$",
+  isbn_online: "$isbn_online$",
   issn: "$issn$",
   funder: "$funder$",
   funder_address: "$funder_address$",
