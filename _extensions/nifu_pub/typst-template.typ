@@ -348,7 +348,14 @@
   
   pagebreak()
   
+  {
+    set figure(numbering: n => {
+	              let hdr = counter(heading).get().first()
+	              let num = query(selector(heading).before(here())).last().numbering
+	              numbering("1.1", hdr, n)
+    })
   doc
+  }
 
   if references != "" {
     set par(first-line-indent: 0pt)
