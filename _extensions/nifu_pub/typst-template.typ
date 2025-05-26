@@ -17,8 +17,7 @@
   project_no: none,
   funder: none,
   funder_address: none,
-  references: none,
-  appendix: none,
+    appendix: none,
   isbn: none,
   isbn_online: none,
   issn: none,
@@ -27,8 +26,10 @@
   signer_1_title: none,
   signer_2: none,
   signer_2_title: none,
+  references: none,
   figure_table: false,
   table_table: false,
+  path_cover_upper_image: none,
   doc
 ) = {
   set page(
@@ -152,6 +153,23 @@
           #text(weight: "bold", font: "Calibri")[#it.caption]
           #it.body]
   }
+  // Forsidens illustrasjon
+  if path_cover_upper_image == "" {
+      box(place(top + left,
+        dx: -margin.at("x"), dy: -margin.at("y"))[
+    #image("_images/cover-ovre.png",
+           width: 210mm)
+  ])
+  } else {
+  box(place(top + left,
+        dx: -margin.at("x"), dy: -margin.at("y"))[
+    #image(path_cover_upper_image,
+           width: 210mm)
+  ])
+
+  }
+    
+    
   
   if title != none {
     set par(leading: 0.55em)
