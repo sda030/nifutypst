@@ -15,24 +15,25 @@
   project_no: none,
   funder: none,
   funder_address: none,
-  references: none,
-  appendix: none,
+    appendix: none,
   isbn: none,
+  isbn_online: none,
   issn: none,
   date: none,
   signer_1: none,
   signer_1_title: none,
   signer_2: none,
   signer_2_title: none,
+  references: none,
   figure_table: false,
   table_table: false,
+  path_cover_upper_image: none,
   doc
 ) = {
   set page(
     paper: paper,
     margin: margin,
-    footer: locate(loc => {
-      if counter(page).at(loc).first() > 2  [
+    footer: context if counter(page).get().at(0) > 2  [
         #align(center)[
           #text(spacing: 0.2cm)[
             #text(size: 11pt)[#counter(page).display()]
@@ -42,13 +43,10 @@
             #text(
               size: 8pt, 
               spacing: 0.1cm,
-              font: "Calibri")[Rapport #report_no]]]]
-    }),
-    background: locate(loc => {
-      if counter(page).at(loc).first() == 1 [
+              font: "Calibri")[Rapport #report_no]]]],
+    background: context if counter(page).get().at(0) == 1 [
         #image("_images/cover_nedre.png")]
-      }
-    ))
+    )
     
   let concatenatedAuthors = if type(authors) != "string" [
      #authors.join(", ", last: " og ")
@@ -59,9 +57,8 @@
   set par(
     justify: true, 
     first-line-indent: 0.6cm,
-    leading: 0.8em)
-  
-  show par: set block(below: 0.8em)
+    leading: 0.8em,
+    spacing: 0.8em)
   
   set text(
     font: "Cambria",
@@ -149,6 +146,23 @@
           #text(weight: "bold", font: "Calibri")[#it.caption]
           #it.body]
   }
+  // Forsidens illustrasjon
+  if path_cover_upper_image == "" {
+      box(place(top + left,
+        dx: -margin.at("x"), dy: -margin.at("y"))[
+    #image("_images/cover-ovre.png",
+           width: 210mm)
+  ])
+  } else {
+  box(place(top + left,
+        dx: -margin.at("x"), dy: -margin.at("y"))[
+    #image(path_cover_upper_image,
+           width: 210mm)
+  ])
+
+  }
+    
+    
   
   if title != none {
     set par(leading: 0.55em)
@@ -196,8 +210,11 @@
       #align(left)[
         #text(
           size: 12.5pt,
-          font: "Calibri"  
-        )[#concatenatedAuthors]]]
+          font: "Calibri",
+          costs: (hyphenation: 500%)
+        )[#concatenatedAuthors]
+      ]
+    ]
   }
 
   pagebreak()
@@ -266,7 +283,9 @@
     [Fotomontasje], [NIFU],
     [], [],
     [ISBN], [#isbn],
-    [ISSN], [#issn])
+    [ISBN], [#isbn_online],
+    [ISSN], [#issn]
+    )
   }
   
   image("_images/CC-BY.svg", width: 8em)
@@ -274,6 +293,9 @@
   text(size: 9pt)[Copyright NIFU: CC-BY-4.0]
   
   block(above: 3em)[#text(size: 9pt)[www.nifu.no]]
+  
+  // Kun om det er et forord
+  if preface != "" {
   
   pagebreak()
   
@@ -287,15 +309,14 @@
     font: "Calibri",
   )[Forord]]
 
-  if preface != none {
     preface
-  }
 
   block(
     width: 100%,
     spacing: 4em
   )[#text()[Oslo, #date]]
 
+  if signer_1 != "" {
   grid(
     columns: 2,
     column-gutter: 15em,
@@ -305,6 +326,9 @@
     text()[#signer_2],
     text()[#signer_1_title],
     text()[#signer_2_title])
+  }
+  }
+
   
   pagebreak()
   linebreak()
@@ -316,17 +340,24 @@
       size: 23.5pt
     )[Innhold]],
   depth: 2,
-  indent: none)
+  indent: 0cm)
   
   pagebreak()
   
+  {
+    set figure(numbering: n => {
+	              let hdr = counter(heading).get().first()
+	              let num = query(selector(heading).before(here())).last().numbering
+	              numbering("1.1", hdr, n)
+    })
   doc
+  }
 
   if references != "" {
-    set par(first-line-indent: 0pt)
-    set block(
-      inset: (left: 1.5em)
-    )
+    set par(first-line-indent: 0pt, 
+            hanging-indent: 1.27cm)
+    set text(hyphenate: false)
+
     bibliography(
       references,
       title: [Referanser],
