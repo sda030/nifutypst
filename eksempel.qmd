@@ -30,7 +30,6 @@ format:
   NIFU_pub-typst: default
 keep-typ: true
 references: refs.bib
-lang: nb
 execute: 
   echo: false
 crossref:
@@ -55,7 +54,7 @@ library(tinytable)
 
 # Dette er den aller første overskriften, som nok er litt i lengste laget
 
-Dette blir bra @hjorland.
+Dette blir bra @hjorland. Vi kan samtidig sjekke om anførselstegn "blir riktig".
 
 {{< lipsum 3 >}}
 
