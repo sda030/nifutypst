@@ -62,7 +62,8 @@
   
   set text(
     font: "Cambria",
-    size: fontsize)
+    size: fontsize,
+    lang: "nb")
   
   show heading.where(level: 1): it => {
     if it.numbering != none {

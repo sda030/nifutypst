@@ -27,5 +27,6 @@
   figure_table: $figure_table$,
   table_table: $table_table$,
   path_cover_upper_image: "$path_cover_upper_image$",
+  lang: "$lang$",
   doc,
 ) 
