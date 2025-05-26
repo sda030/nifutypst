@@ -1,6 +1,4 @@
 
-#import "@preview/tablex:0.0.5": tablex, cellx, hlinex
-
 
 #let NIFU_report(
   title: none,
@@ -267,12 +265,11 @@
   
   pagebreak()
   
-  tablex(
+  {
+  show table.cell: set text(size: 9pt)
+  table(
     columns: (1.1fr, 3.5fr),
-    auto-lines: false,
-    map-cells: cell => {
-      (..cell, content: text(size: 9pt)[#cell.content])
-    },
+    stroke: none,
     align: left,
     [Rapport], [#report_no],
     [Utgitt av], [Nordisk institutt for studier av innovasjon, forskning og utdanning],
